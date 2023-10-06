@@ -1,5 +1,5 @@
-import {GetCinemaDistance} from "./mainGeolocalisation.js"
-
+import { GetCinemaDistance } from "./mainGeolocalisation.js";
+import { userPos } from "./mainGeolocalisation.js";
 const cinemaLst = document.getElementById("cinemaLst");
 const pagination = document.getElementById("pagination");
 let cinemas = [];
@@ -81,17 +81,28 @@ function LoadPage(pageNumber)
 function fetchCinemas() {
     fetch('https://data.culture.gouv.fr/api/explore/v2.1/catalog/datasets/etablissements-cinematographiques/records?limit=-1')
         .then(response => response.json())
-        .then(data => {
+        .then(data => 
+        {
             cinemas = data.results;
 
             cinemas.sort((a, b) => {
-                const fauteuilsA = a.fauteuils || 0;
-                const fauteuilsB = b.fauteuils || 0;
-                return fauteuilsB - fauteuilsA;
+                const fauteuilsA = GetCinemaDistance(a);
+                const fauteuilsB = GetCinemaDistance(b);
+                return fauteuilsA - fauteuilsB;
             })
+
+            L.mapquest.key = 'KEY';
+
+            // 'map' refers to a <div> element with the ID map
+            L.mapquest.map('map', {
+                center: [userPos.latitude, userPos.longitude],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 12
+            });
             LoadPage(1);
         }
-)}
+    );
+}
 
 // Appelez la fonction pour récupérer les cinémas au chargement de la page
-window.addEventListener('load', fetchCinemas);
+fetchCinemas();
