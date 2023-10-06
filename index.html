@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Exo3WAProjetCinemaGeolocalisation</title>
-        <meta charset="utf-8" />
-        <script type="module" src="js/mainGeolocalisation.js" defer></script>
-        <script type="module" src="js/mainLstCinema.js" defer></script>
-    </head>
 
-    <body>
-        <h1>Liste Des Cinémas</h1>
-        
-        <ul id="cinemaLst"></ul>
-    </body>
+<head>
+    <title>Exo3WAProjetCinemaGeolocalisation</title>
+    <meta charset="utf-8" />
+    <!--Script Mapquest-->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <!--Script javascript-->
+    <script type="module" src="js/mainGeolocalisation.js" defer></script>
+    <script type="module" src="js/mainLstCinema.js" defer></script>
+</head>
+
+<body>
+    <h1>Liste Des Cinémas</h1>
+
+    <ul id="cinemaLst"></ul>
+
+    <div id="map" style="height: 400px;"></div>
+
+</body>
+
 </html>

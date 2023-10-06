@@ -10,7 +10,7 @@ function GetPosition()
     });
 }
 
-let userPos = {};
+export let userPos = {};
 await GetPosition().then(pos => 
 {
     userPos.latitude = pos.latitude;
