@@ -91,13 +91,13 @@ function fetchCinemas() {
                 return fauteuilsA - fauteuilsB;
             })
 
-            L.mapquest.key = 'KEY';
+            L.mapquest.key = 'DziOZPRgzB08NRYkY9v9iEkWQUxvu0BW';
 
             // 'map' refers to a <div> element with the ID map
             L.mapquest.map('map', {
                 center: [userPos.latitude, userPos.longitude],
                 layers: L.mapquest.tileLayer('map'),
-                zoom: 12
+                zoom: 18
             });
             LoadPage(1);
         }
