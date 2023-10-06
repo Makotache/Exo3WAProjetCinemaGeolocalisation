@@ -16,7 +16,6 @@ await GetPosition().then(pos =>
     userPos.latitude = pos.latitude;
     userPos.longitude = pos.longitude;
 });
-console.log(userPos);
 
 export function GetCinemaDistance(cinemaPos)
 {
