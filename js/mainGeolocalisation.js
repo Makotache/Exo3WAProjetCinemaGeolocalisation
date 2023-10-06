@@ -19,5 +19,5 @@ await GetPosition().then(pos =>
 
 export function GetCinemaDistance(cinemaPos)
 {
-    return haversine([userPos.latitude, userPos.longitude], [cinemaPos.geolocalisation.lat, cinemaPos.geolocalisation.lon])
+    return haversine([userPos.latitude, userPos.longitude], [cinemaPos.geolocalisation.lat, cinemaPos.geolocalisation.lon]).toFixed(2);
 }

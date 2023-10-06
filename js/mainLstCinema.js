@@ -1,3 +1,5 @@
+import {GetCinemaDistance} from "./mainGeolocalisation.js"
+
 const cinemaLst = document.getElementById("cinemaLst");
 
 // Fonction pour récupérer les données depuis l'API
@@ -13,11 +15,10 @@ function fetchCinemas() {
                 const fauteuilsB = b.fauteuils || 0;
                 return fauteuilsB - fauteuilsA;
             })
-            const cinemaList = document.getElementById('cinemaList');
-
+            
             cinemas.forEach(cinema => {
                 const li = document.createElement('li');
-                li.textContent = `${cinema.nom} - ${cinema.adresse}, ${cinema.commune}`;
+                li.textContent = `${cinema.nom} - ${cinema.adresse}, ${cinema.commune} - ${GetCinemaDistance(cinema)} Km`;
                 cinemaLst.appendChild(li);
             });
         }
