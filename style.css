@@ -1,0 +1,79 @@
+.m-r {
+    margin-right: 20px;
+}
+
+.o-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.o-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-center-vert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-center-horz {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*ALL*/
+.div-btn-red, .div-btn-red > *, 
+.div-btn-blue, .div-btn-blue > *, 
+.div-btn-green, .div-btn-green > *
+{
+    border-radius: 5px;
+    padding: 4px 8px 4px 8px;
+    color: white!important;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+    user-select: none;
+}
+.div-btn-red, .div-btn-red > * {
+    background-color: red;
+    border: red 2px solid;
+}
+
+.div-btn-red:hover {
+    box-shadow: -2px 2px 5px rgb(169, 0, 0);
+}
+
+.div-btn-blue, .div-btn-blue > * {
+    background-color: blue;
+    border: blue 2px solid;
+}
+
+.div-btn-blue:hover {
+    box-shadow: -2px 2px 5px rgb(0, 0, 169);
+}
+
+.div-btn-green, .div-btn-green > * {
+    background-color: green;
+    border: green 2px solid;
+}
+
+.div-btn-green:hover {
+    box-shadow: -2px 2px 5px rgb(0, 121, 0);
+}
+
+body > div {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-around;
+}
